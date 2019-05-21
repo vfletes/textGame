@@ -1,1 +1,1 @@
-name = input("What is your name")
+#methods/storylines here

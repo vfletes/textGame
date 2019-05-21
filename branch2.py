@@ -1,1 +1,0 @@
-#i'll impliment sql somehow here, maybe inventory
