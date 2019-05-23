@@ -1,6 +1,7 @@
 #user inputs here
-import package main
+#import package src.main
 name = input("What is your name")
-intro = input('Hello ' + name + ' you are a new assistant for the company Ultra. Will you be obedient, yes or no?')
-if intro == no:
+intro = input('Hello ' + name + ' you are a new agent for the mission Hush. Will you be obedient, yes or no?')
+if lower(intro) == yes:
     
+#https://stackoverflow.com/questions/21136241/what-is-the-right-way-to-create-project-structure-in-pycharm
