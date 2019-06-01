@@ -7,7 +7,7 @@ name = input("What is your name knight?")
 intro = input('Hello ' + name + ' I have been told you are the best in the land. My jewels from my crown have been stolen. We caught the thief but he hid the jewels throughout the country, will you retrieve them for me?')
 #print intro
 if intro.lower() in ['y', 'yes']:
-    answer = input("Great")
+    answer = input("Great, your options are to go straight, back, right, left, peer, jump or s, b, r, l, p, j")
 
 else:
     print("Well then you are no use to me. Good Bye")
