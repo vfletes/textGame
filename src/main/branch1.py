@@ -3,78 +3,8 @@
 #help = https://docs.python-guide.org/writing/structure/
 
 location = 2.0 
-        if location == 0.7:
-            waterGrass()
-
-        elif location == 0.9:
-            tallGrass()
-
-        elif location == 0.11:
-            ladderB()   
-
-        elif location == 1.5:
-            mushroom()
-
-        elif location == 1.8:
-            fork()
-
-        elif location == 1.9:
-            ladderA()
-
-        elif location == 1.11:
-            windyCastle()
-
-        if location == 2.0:
-        castle()
-
-        elif location == 2.1:
-            waterfall()
-
-        elif location == 2.5:
-            blueDoor()
-
-        elif location == 2.6:
-            darkCastle()
-
-        elif location == 2.8:
-            trashtrail()
-
-        elif location == 2.11:
-            waterC()
-
-        if location == 3.1:
-        bridge()
-
-        elif location == 3.3:
-            underbridge()
-
-        elif location == 3.5:
-            waterA()
-
-        elif location == 3.6:
-            waterB()
-
-        elif location == 4.1:
-            trail()
-
-        elif location == 4.8:
-            miniCastle()
-
-        elif location == 4.9:
-            tallCastle()
-
-        if location == 5.0:
-            rustedCastle()
-
-        elif location == 5.4:
-            grassA()
-
-        elif location == 5.6:
-            grassB()
-
-        elif location == 5.8:
-            grassC()
-
+if location == 2.0:
+    castle()
 def castle():#(2,0) Emerald Jewel no riddle
     # check if they possess the emerald jewel, if so display something else
     response = input("You are now outside of the castle and see a shiny item under a stick")
@@ -88,7 +18,7 @@ def castle():#(2,0) Emerald Jewel no riddle
             location = 2.1
             waterfall()
         else:
-            print("Please use commands")
+            print("Please use commands, or another command")
             castle()
     elif response.lower() in ['left', 'l']:
         location = 3.1
@@ -97,7 +27,7 @@ def castle():#(2,0) Emerald Jewel no riddle
         location = 2.1
         waterfall()
     else:
-        print("Please use commands")
+        print("Please use commands, or another command")
         castle()
 def bridge():#(3,1) 
     response = input("The bridge has writing that says 'Keep going straight' but has a weak spot in the middle")
@@ -111,15 +41,30 @@ def bridge():#(3,1)
         location = 2.0
         castle()
     else:
-        print("Please use commands")
+        print("Please use commands, or another command")
         bridge()
 def waterfall():#(2,1)
     response = input("You slip and fall into a waterfall. You start to slow down and see a blue door going into the hillside")
-    if response.lower() in ['p', 'peer']
+    if response.lower() in ['p', 'peer']:
+        location = 2.5
+        blueDoor()
+    else:
+        print("Please use commands, or another command")
+        waterfall()
 def trail():#(4,1)
-
+    response = input("The trail breaks into a fork. Straight up the hill you see what could be the top of a building, but the trail also takes a right turn")
+    if response.lower() in ['s', 'straight']:
+        location = 5.0
+        rustedCastle()
+    elif response.lower() in ['r', 'right']:
+        location = 5.4
+        grassA()
+    else:
+        print("Please use commands, or another command")
+        trail()
 def rustedCastle():#(5,0) Diamond Jewel
     # check if they possess the diamond jewel, if so display something else
+    response = input("The door appears to have a riddle ")
 def grassA():#(5,4)
 
 def grassB():#(5,6)
