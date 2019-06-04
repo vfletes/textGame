@@ -1,34 +1,62 @@
 #methods/storylines here
 # import package src.main
 #help = https://docs.python-guide.org/writing/structure/
-
-location = 2.0 
-if location == 2.0:
+# code of interest
+name = input("What is your name knight?")
+#print name
+intro = input('Hello ' + name + ' I have been told you are the best in the land. My jewels from my crown have been stolen. We caught the thief but he hid the jewels throughout the country, will you retrieve them for me?')
+#print intro
+if intro.lower() in ['y', 'yes']:
+    print("Great, your options are to go straight, back, right, left, peer, jump or s, b, r, l, p, j")
     castle()
+else:
+    print("Well then you are no use to me. Good Bye")
+# straight, back, left, right, s, b, l, r
+
+emerald = False
+diamond = False
+peridot = False
+aquamarine = False
+tanzanite = False
+sapphire = False
+ruby = False
+onyx = False
+topaz = False
+moonstone = False
+
+location = 2.0 #no purpose besides making it easier for myself to look at my map
+
 def castle():#(2,0) Emerald Jewel no riddle
     # check if they possess the emerald jewel, if so display something else
-    response = input("You are now outside of the castle and see a shiny item under a stick")
-    if response.lower() in ['p', 'peer']:
-        response = input("Obtained Emerald Jewel")
-        #add emerald Jewel to sql database
+    if emerald == True:
+        response = input("You are now outside of the castle and see a shiny item under a stick")
+        if response.lower() in ['p', 'peer']:
+            emerald = True
+            response = input("Obtained Emerald Jewel")
+            #add emerald Jewel to sql database
+            if response.lower() in ['left', 'l']:
+                location = 3.1
+                bridge()
+                elif response.lower() in ['straight', 's']:
+                location = 2.1
+                waterfall()
+            else:
+                print("Please use commands, or another command")
+                castle()
+    else:
+        response = input("You are now outside of the castle")
         if response.lower() in ['left', 'l']:
             location = 3.1
             bridge()
         elif response.lower() in ['straight', 's']:
             location = 2.1
             waterfall()
+        elif response.lower() in ['p', 'peer']:
+            print("There is nothing to peer")
+            castle()
         else:
             print("Please use commands, or another command")
             castle()
-    elif response.lower() in ['left', 'l']:
-        location = 3.1
-        bridge()
-    elif response.lower() in ['straight', 's']:
-        location = 2.1
-        waterfall()
-    else:
-        print("Please use commands, or another command")
-        castle()
 def bridge():#(3,1) 
     response = input("The bridge has writing that says 'Keep going straight' but has a weak spot in the middle")
     if response.lower() in ['j', 'jump']:
@@ -59,16 +87,49 @@ def trail():#(4,1)
     elif response.lower() in ['r', 'right']:
         location = 5.4
         grassA()
+    elif response.lower() in ['back', 'b']:
+        location = 3.1
+        bridge()
     else:
         print("Please use commands, or another command")
         trail()
 def rustedCastle():#(5,0) Diamond Jewel
     # check if they possess the diamond jewel, if so display something else
-    response = input("The door appears to have a riddle ")
+    if diamond = True:
+        response = input("Already obtained diamond jewel")
+        if response.lower() in ['back','b']:
+            location = 4.1
+            trail()
+        else:
+            print("Please use commands, or another command")
+            rustedCastle()
+    else:
+        response = input("The door appears to have a riddle: What is a mathematician’s favorite dessert?")
+        if response.lower() in ['Pi']:
+            diamond = True
+            response = input("Correct, obtained diamond jewel")
+            if response.lower() in ["back", 'b']:
+                location = 4.1
+                trail()
+            else:
+                print("Please use commands, or another command")
+                rustedCastle()
+        else:
+            print("Incorrect")
+            rustedCastle()
 def grassA():#(5,4)
-
+    response = input("The trail only allows you to go straight")
+    if response.lower() in ['s', 'straight']:
+        location = 5.6
+        grassB()
+    elif response.lower() in ['b','back']:
+        location = 4.1
+        trail()
+    else:
+        print("Please use commands, or another command")
+        grassA()
 def grassB():#(5,6)
-
+    response = input("")
 def grassC():#(5,8)
 
 def miniCastle():#(4,8) Aquamarine Jewel
