@@ -129,7 +129,8 @@ def grassA():#(5,4)
         print("Please use commands, or another command")
         grassA()
 def grassB():#(5,6)
-    response = input("")
+    response = input("The trail continues and only allows you to go straight")
+    
 def grassC():#(5,8)
 
 def miniCastle():#(4,8) Aquamarine Jewel
