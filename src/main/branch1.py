@@ -23,8 +23,7 @@ ruby = False
 onyx = False
 topaz = False
 moonstone = False
-
-location = 2.0 #no purpose besides making it easier for myself to look at my map
+#no purpose besides making it easier for myself to look at my map
 
 def castle():#(2,0) Emerald Jewel no riddle
     # check if they possess the emerald jewel, if so display something else
@@ -35,10 +34,8 @@ def castle():#(2,0) Emerald Jewel no riddle
             response = input("Obtained Emerald Jewel")
             #add emerald Jewel to sql database
             if response.lower() in ['left', 'l']:
-                location = 3.1
                 bridge()
                 elif response.lower() in ['straight', 's']:
-                location = 2.1
                 waterfall()
             else:
                 print("Please use commands, or another command")
@@ -46,10 +43,8 @@ def castle():#(2,0) Emerald Jewel no riddle
     else:
         response = input("You are now outside of the castle")
         if response.lower() in ['left', 'l']:
-            location = 3.1
             bridge()
         elif response.lower() in ['straight', 's']:
-            location = 2.1
             waterfall()
         elif response.lower() in ['p', 'peer']:
             print("There is nothing to peer")
@@ -60,13 +55,10 @@ def castle():#(2,0) Emerald Jewel no riddle
 def bridge():#(3,1) 
     response = input("The bridge has writing that says 'Keep going straight' but has a weak spot in the middle")
     if response.lower() in ['j', 'jump']:
-        location = 3.3
         underbridge()
     elif response.lower() in ['straight', 's']:
-        location = 4.1
         trail()
     elif response.lower() in ['back', 'b']:
-        location = 2.0
         castle()
     else:
         print("Please use commands, or another command")
@@ -74,7 +66,6 @@ def bridge():#(3,1)
 def waterfall():#(2,1)
     response = input("You slip and fall into a waterfall. You start to slow down and see a blue door going into the hillside")
     if response.lower() in ['p', 'peer']:
-        location = 2.5
         blueDoor()
     else:
         print("Please use commands, or another command")
@@ -82,13 +73,10 @@ def waterfall():#(2,1)
 def trail():#(4,1)
     response = input("The trail breaks into a fork. Straight up the hill you see what could be the top of a building, but the trail also takes a right turn")
     if response.lower() in ['s', 'straight']:
-        location = 5.0
         rustedCastle()
     elif response.lower() in ['r', 'right']:
-        location = 5.4
         grassA()
     elif response.lower() in ['back', 'b']:
-        location = 3.1
         bridge()
     else:
         print("Please use commands, or another command")
@@ -98,7 +86,6 @@ def rustedCastle():#(5,0) Diamond Jewel
     if diamond = True:
         response = input("Already obtained diamond jewel")
         if response.lower() in ['back','b']:
-            location = 4.1
             trail()
         else:
             print("Please use commands, or another command")
@@ -109,7 +96,6 @@ def rustedCastle():#(5,0) Diamond Jewel
             diamond = True
             response = input("Correct, obtained diamond jewel")
             if response.lower() in ["back", 'b']:
-                location = 4.1
                 trail()
             else:
                 print("Please use commands, or another command")
@@ -120,19 +106,30 @@ def rustedCastle():#(5,0) Diamond Jewel
 def grassA():#(5,4)
     response = input("The trail only allows you to go straight")
     if response.lower() in ['s', 'straight']:
-        location = 5.6
         grassB()
     elif response.lower() in ['b','back']:
-        location = 4.1
         trail()
     else:
         print("Please use commands, or another command")
         grassA()
 def grassB():#(5,6)
     response = input("The trail continues and only allows you to go straight")
-    
+    if response.lower() in ['s', 'straight']:
+        grassC()
+    elif response.lower() in ['b'. 'back']:
+        grassA()
+    else:
+        print("Please use commands, or another command")
+        grassB()
 def grassC():#(5,8)
-
+    response = input("The trail continues straight and you catch glimpse of a building straight ahead")
+    if response.lower() in ['s', 'straight']:
+        miniCastle()
+    elif response.lower() in ['b', 'back']:
+        grassB()
+    else:
+        print("Please use commands, or another command")
+        grassC()
 def miniCastle():#(4,8) Aquamarine Jewel
     # check if they possess the aquamarine jewel, if so display something else
 def tallCastle():#(4,9) Tanzanite Jewel
